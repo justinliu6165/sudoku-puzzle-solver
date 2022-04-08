@@ -2,6 +2,8 @@
 
 Console-based application that solves sudokus
 
+Techniques to solve a sudoku: https://www.conceptispuzzles.com/index.aspx?uri=puzzle/sudoku/techniques
+
 ## Procedure
 1. Loop through each cell, determine if empty
 2. Check what numbers are valid 
