@@ -52,48 +52,14 @@ def check_cell(x,y):
             
             cell = sudoku_pizzle[min_cell_y][min_cell_x]
             if cell in available_digits: available_digits.remove(cell) 
-            
-    # 1. Loop through available_digits
-    #   a. Check row and column for each cell, see if digit is available in that cell
-    #   b. If all empty cells in 3x3 return false, then only 1 value is valid
     
-    available_empty_cells = False
-    
-    def do_a_check(x, y, value):
-        # check row
-        # check column
-        # check grid
-        
-        # if value is valid in x,y, return true
-        # else return false
-        return
-    
-    for val in available_digits:
-        for min_cell_y in range(cell_y_start, cell_y_end):
-            for min_cell_x in range(cell_x_start, cell_x_end):
-                if sudoku_pizzle[min_cell_y][min_cell_x] == 0:
-                    do_a_check(min_cell_x, min_cell_y, val)
-    
-    # 2. Check if there are potential pairs
-
-    return available_digits
-    # if len(available_digits) > 1:
-    #     potentials[str(x) + str(y)] = available_digits
-    #     return False
-    # else:
-    #     if (str(x) + str(y)) in potentials:
-    #         del potentials[str(x) + str(y)]
-    #     return available_digits[0]
-    
-
-check_cell(0,0)
-
-    
-    
-    
-    
-    
-    
+    if len(available_digits) > 1:
+        potentials[str(x) + str(y)] = available_digits
+        return False
+    else:
+        if (str(x) + str(y)) in potentials:
+            del potentials[str(x) + str(y)]
+        return available_digits[0]
     
 def update_grid(x,y,val):
     sudoku_pizzle[y][x] = val
@@ -118,8 +84,7 @@ def loop_sudoku_puzzle():
     if check_for_empty_cells():
         loop_sudoku_puzzle()
 
-
 # loop_sudoku_puzzle()
 
-# for row in sudoku_pizzle:
-#     print(row)
+for row in sudoku_pizzle:
+    print(row)
